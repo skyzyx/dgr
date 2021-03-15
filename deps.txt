@@ -1,0 +1,13 @@
+digraph {
+	"ecs-cluster" ;
+	"resource-tags" ;
+	"public-dns" ;
+	"certificate" ;
+	"database" ;
+
+	"ecs-cluster" -> "resource-tags";
+	"ecs-cluster" -> "database";
+	"database" -> "resource-tags";
+	"public-dns" -> "ecs-cluster";
+	"certificate" -> "public-dns";
+}
