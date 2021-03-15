@@ -14,6 +14,12 @@ Assuming you have the [Go toolchain](https://golang.org/doc/install) set up, run
 go get github.com/skyzyx/dgr
 ```
 
+## Usage
+
+```bash
+terragrunt graph-dependencies | dgr
+```
+
 ## Use-case
 
 My specific use-case is using [Terragrunt] to break apart monolithic [Terraform] into smaller, discrete _units_. (There's no need for an update to a Lambda function to execute the same monolithic Terraform as what powers my database.) These _units_ can [depend on each other](https://terragrunt.gruntwork.io/docs/features/keep-your-terraform-code-dry/), and Terragrunt knows how to track that.
@@ -46,7 +52,7 @@ What this means is that if there is an update to one of my discrete units of Ter
 
 I've tried to follow the Unix philosophy of doing one thing well, and supporting the ability to pipe things from one process to the next. I haven't broadly tested this (nor will I), but it should be able to sort nodes by their edges for _any_ Graphviz-formatted `digraph`.
 
-Note that I have little idea how this graph stuff works. I've picked up a little here and there, but I don't understand it well enough to know how to implement it myself (sorry technical recruiters). I have an interest in learning, but I'd need someone to walk me though the algorithm(s) first.
+Note that I have little idea how this graph stuff works. I've picked up a little here and there, but I don't understand it well enough to know how to implement it myself (sorry technical recruiters). I have an interest in learning, but I'd [need someone](https://tylercipriani.com/blog/2017/09/13/topographical-sorting-in-golang/) to [walk me though](https://github.com/philopon/go-toposort/blob/master/toposort.go) the [algorithm(s) first](https://github.com/stevenle/topsort/blob/master/topsort.go).
 
 <https://xkcd.wtf/1988/>
 
