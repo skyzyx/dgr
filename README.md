@@ -6,6 +6,14 @@ Takes a DOT-formatted `digraph` where dependencies are expressed as `dependent -
 
 With the `-node` parameter, you can specify one of the nodes in the graph, and this will display the list of dependencies beginning with the node you specified. The intended use-case is to assume that node's dependencies are met, so just perform the work for that node and everything which depends on it.
 
+## Install
+
+Assuming you have the [Go toolchain](https://golang.org/doc/install) set up, run:
+
+```bash
+go get github.com/skyzyx/dgr
+```
+
 ## Use-case
 
 My specific use-case is using [Terragrunt] to break apart monolithic [Terraform] into smaller, discrete _units_. (There's no need for an update to a Lambda function to execute the same monolithic Terraform as what powers by database.) These _units_ can [depend on each other](https://terragrunt.gruntwork.io/docs/features/keep-your-terraform-code-dry/), and Terragrunt knows how to track that.
