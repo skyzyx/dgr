@@ -40,7 +40,7 @@ By piping that data into `dgr`, it will read the _directed acyclic graph_ (DAG) 
 
 If you pass the name of one of the nodes to the `-node` flag, it will give you a shorter version of the list starting with that node.
 
-What this means is that if there is an update to one of my discrete units of Terraform (managed by Terragrunt), this will give me a list of the units which need to be re-applied in order for the changes to apply cleanly all the way through the stack.
+What this means is that if there is an update to one of my discrete units of Terraform (managed by Terragrunt), and I have other units which depend on that unit downstream, this will give me a list of the units which need to be re-applied in order for the changes to apply cleanly all the way through the stack.
 
 ## Generic use
 
