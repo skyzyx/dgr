@@ -16,7 +16,7 @@ go get github.com/skyzyx/dgr
 
 ## Use-case
 
-My specific use-case is using [Terragrunt] to break apart monolithic [Terraform] into smaller, discrete _units_. (There's no need for an update to a Lambda function to execute the same monolithic Terraform as what powers by database.) These _units_ can [depend on each other](https://terragrunt.gruntwork.io/docs/features/keep-your-terraform-code-dry/), and Terragrunt knows how to track that.
+My specific use-case is using [Terragrunt] to break apart monolithic [Terraform] into smaller, discrete _units_. (There's no need for an update to a Lambda function to execute the same monolithic Terraform as what powers my database.) These _units_ can [depend on each other](https://terragrunt.gruntwork.io/docs/features/keep-your-terraform-code-dry/), and Terragrunt knows how to track that.
 
 By running `terragrunt graph-dependencies`, you can Graphviz (DOT) data which looks something like this:
 
